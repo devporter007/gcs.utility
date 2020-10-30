@@ -1,5 +1,5 @@
 @ECHO OFF
-TITLE GCS GUI , Port007 - All Rights Reserved
+title GCS GUI , Port007 - All Rights Reserved
 %HOMEDRIVE%
 CD "%PROGRAMFILES(X86)%\Steam"
 :FOUND

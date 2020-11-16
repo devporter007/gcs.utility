@@ -48,11 +48,17 @@ namespace GCCS_GUI
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            using (var archive = ZipArchive.Open(main.pather))
+            if (!Directory.Exists(main.SavDir))
+            {
+                main.SMkDir();
+
+            }
+
+            using (var archive = ZipArchive.Open($"{main.pather}"))
             {
                 foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
                 {
-                    entry.WriteToDirectory("C:\\", new ExtractionOptions()
+                    entry.WriteToDirectory(main.SavDir, new ExtractionOptions()
                     {
                         ExtractFullPath = true,
                         Overwrite = true
@@ -66,9 +72,14 @@ namespace GCCS_GUI
         {
             if (!File.Exists("fireandee.exe"))
             {
-                wc.DownloadFileCompleted += new AsyncCompletedEventHandler(FileDownloadComplete);
-                Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.0.00001/fireandee.exe");
-                wc.DownloadFileAsync(target, "fireandee.exe");
+                var client = new MegaApiClient();
+                client.LoginAnonymous();
+
+                Uri fileLink = new Uri("https://mega.nz/file/d8EkiToD#wTYojZdfZd_XMa1X7hWq_XikrvhvJCVPpRczpTZWWtg");
+                INodeInfo node = client.GetNodeFromLink(fileLink);
+                client.DownloadFile(fileLink, node.Name);
+                MessageBox.Show("Downloaded Completed, Press button again");
+                client.Logout();
                 return;
 
             }
@@ -171,12 +182,22 @@ namespace GCCS_GUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            if (!Directory.Exists(main.loadC))
+            {
+                main.LMakDir();
+
+            }
             using (var archive = ZipArchive.Create())
             {
                 archive.AddAllFromDirectory(main.SavDir);
                 archive.SaveTo(main.pather, CompressionType.Deflate);
             }
             MessageBox.Show("Saved Successfully, Autosaving is not currently supported.");
+        }
+
+        private void guna2Button29_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

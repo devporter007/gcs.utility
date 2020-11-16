@@ -73,6 +73,46 @@ namespace GCCS_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap about_icon_png_14 {
+            get {
+                object obj = ResourceManager.GetObject("about-icon-png-14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_left_chevron_chevronleft_left_left_icon_icon_1320185731545502691 {
+            get {
+                object obj = ResourceManager.GetObject("arrow+left+chevron+chevronleft+left+left+icon+icon-1320185731545502691", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CLOSE {
+            get {
+                object obj = ResourceManager.GetObject("CLOSE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap e_commerce_17_512 {
+            get {
+                object obj = ResourceManager.GetObject("e_commerce-17-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap top_best_021 {
             get {
                 object obj = ResourceManager.GetObject("top-best-021", resourceCulture);

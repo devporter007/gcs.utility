@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(finalSave));
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -40,6 +41,7 @@
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.label7 = new System.Windows.Forms.Label();
+            this.guna2Button29 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,12 +125,12 @@
             this.guna2Button17.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button17.ForeColor = System.Drawing.Color.Black;
             this.guna2Button17.HoverState.Parent = this.guna2Button17;
+            this.guna2Button17.Image = global::GCCS_GUI.Properties.Resources.arrow_left_chevron_chevronleft_left_left_icon_icon_1320185731545502691;
             this.guna2Button17.Location = new System.Drawing.Point(12, 517);
             this.guna2Button17.Name = "guna2Button17";
             this.guna2Button17.ShadowDecoration.Parent = this.guna2Button17;
             this.guna2Button17.Size = new System.Drawing.Size(43, 26);
             this.guna2Button17.TabIndex = 17;
-            this.guna2Button17.Text = "Prev";
             this.guna2Button17.Click += new System.EventHandler(this.guna2Button17_Click);
             // 
             // guna2Button4
@@ -216,6 +218,26 @@
             this.label7.Text = "Game Launched, Wait...";
             this.label7.Visible = false;
             // 
+            // guna2Button29
+            // 
+            this.guna2Button29.AutoRoundedCorners = true;
+            this.guna2Button29.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button29.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button29.BorderRadius = 12;
+            this.guna2Button29.CheckedState.Parent = this.guna2Button29;
+            this.guna2Button29.CustomImages.Parent = this.guna2Button29;
+            this.guna2Button29.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2Button29.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button29.ForeColor = System.Drawing.Color.White;
+            this.guna2Button29.HoverState.Parent = this.guna2Button29;
+            this.guna2Button29.Location = new System.Drawing.Point(906, 12);
+            this.guna2Button29.Name = "guna2Button29";
+            this.guna2Button29.ShadowDecoration.Parent = this.guna2Button29;
+            this.guna2Button29.Size = new System.Drawing.Size(27, 31);
+            this.guna2Button29.TabIndex = 32;
+            this.guna2Button29.Text = "−";
+            this.guna2Button29.Click += new System.EventHandler(this.guna2Button29_Click);
+            // 
             // finalSave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,6 +246,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GCCS_GUI.Properties.Resources.v475_katie_101_abstractblackandwhitebg_1;
             this.ClientSize = new System.Drawing.Size(976, 555);
+            this.Controls.Add(this.guna2Button29);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.guna2ProgressBar1);
             this.Controls.Add(this.guna2Button6);
@@ -235,6 +258,7 @@
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "finalSave";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GCS Utility GUI Alpha";
@@ -257,6 +281,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button guna2Button29;
     }
 }
 

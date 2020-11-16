@@ -13,6 +13,8 @@ using SharpCompress.Common;
 using SharpCompress.Archives;
 using System.IO;
 using System.Diagnostics;
+using CG.Web.MegaApiClient;
+using System.IO.MemoryMappedFiles;
 
 namespace GCCS_GUI
 {
@@ -27,10 +29,16 @@ namespace GCCS_GUI
 
         private void main_Load(object sender, EventArgs e)
         {
+            if (main.Mafia == true || main.sr3m == true)
+            {
+                guna2Button1.Enabled = true;
+            }
             guna2ShadowForm1.SetShadowForm(this);
             guna2TextBox1.Text = Class1.Decider;
 
         }
+
+        public static string mirror;
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -38,17 +46,50 @@ namespace GCCS_GUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Feature Not Available");
+            MessageBox.Show("This is useful only if you get exhausted error on gdrive!", "Information");
+            if (main.Mafia == true)
+            {
+                mirror = "https://drive.google.com/uc?id=1Unbo1ZodG4KORh-zXGHL-At5qNMaZLvD";
+            }
+            else if (main.sr3m == true)
+            {
+                mirror = "https://drive.google.com/uc?id=1Wl7UNCkPgOkCIySZgb2iHV2DOCjoE3QP";
+            }
+            Class1.Decider = mirror;
+            guna2TextBox1.Text = Class1.Decider;
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             if (!File.Exists("fireandee.exe"))
             {
-                wc.DownloadFileCompleted += new AsyncCompletedEventHandler(FileDownloadComplete);
-                Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.0.00001/fireandee.exe");
-                wc.DownloadFileAsync(target, "fireandee.exe");
+       
+                var client = new MegaApiClient();
+                client.LoginAnonymous();
+
+                Uri fileLink = new Uri("https://mega.nz/file/gh8SBCTK#4JmpE7zwEDjEPXQf-i7YvFMjTkrqzoag2k9ER2xYQHg");
+                INodeInfo node = client.GetNodeFromLink(fileLink);
+                client.DownloadFile(fileLink, node.Name);
+                client.Logout();
+
+                var clientv = new MegaApiClient();
+                clientv.LoginAnonymous();
+
+                Uri fileLinkv = new Uri("https://mega.nz/file/g49gyRgT#ppKAGJhkjpwR7Ftbhf6htFvM-FKIQYOdCuNvVk9Ywuc");
+                INodeInfo nodev = clientv.GetNodeFromLink(fileLinkv);
+                clientv.DownloadFile(fileLinkv, nodev.Name);
+                clientv.Logout();
+
+                var clienta = new MegaApiClient();
+                clienta.LoginAnonymous();
+
+                Uri fileLinka = new Uri("https://mega.nz/file/h5VTWaJJ#WQwVMRJaN4FisXpuHapgd518x5QMoq-KHQ-E2G0jlyA");
+                INodeInfo nodea = clienta.GetNodeFromLink(fileLinka);
+                clienta.DownloadFile(fileLinka, nodea.Name);
+                MessageBox.Show("Press Button Again!", "Proceed");
+                clienta.Logout();
                 return;
+                
 
             }
             if (File.Exists("fireandee.exe"))
@@ -78,11 +119,20 @@ namespace GCCS_GUI
                 strCmdText = $"/C 8z.exe x \"{main.GameName2}\" && pause";
                 Process.Start("CMD.exe", strCmdText);
             }
-            
+            if (main.DeathDecider == true)
+            {
+                strCmdText = $"/C 8z.exe x {main.GameName}";
+                Process.Start("CMD.exe", strCmdText);
+            }
             this.Hide();
             new finalSave().Show();
             
 
+        }
+
+        private void guna2Button29_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

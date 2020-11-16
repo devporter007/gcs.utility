@@ -16,11 +16,11 @@ using System.Diagnostics;
 
 namespace GCCS_GUI
 {
-    public partial class VersionAndAbout : Form
+    public partial class Sources : Form
         
     {
         System.Net.WebClient wc = new System.Net.WebClient();
-        public VersionAndAbout()
+        public Sources()
         {
             InitializeComponent();
         }
@@ -34,10 +34,10 @@ namespace GCCS_GUI
             this.Hide();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+    
+        private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            new Sources().Show();
-            this.Hide();
+
         }
     }
 }

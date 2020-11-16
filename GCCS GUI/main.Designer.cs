@@ -50,7 +50,6 @@
             this.guna2Button16 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button18 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button17 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button19 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.guna2Button20 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button21 = new Guna.UI2.WinForms.Guna2Button();
@@ -59,6 +58,11 @@
             this.guna2Button24 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button25 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button26 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button27 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button28 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button29 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button19 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button30 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,7 +284,7 @@
             this.guna2Button11.ShadowDecoration.Parent = this.guna2Button11;
             this.guna2Button11.Size = new System.Drawing.Size(156, 45);
             this.guna2Button11.TabIndex = 11;
-            this.guna2Button11.Text = "Planet Zoo";
+            this.guna2Button11.Text = "The Dark Pictures  Little Hope";
             this.guna2Button11.Click += new System.EventHandler(this.guna2Button11_Click);
             // 
             // guna2Button12
@@ -351,12 +355,13 @@
             this.guna2Button15.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button15.ForeColor = System.Drawing.Color.Black;
             this.guna2Button15.HoverState.Parent = this.guna2Button15;
+            this.guna2Button15.ImageSize = new System.Drawing.Size(50, 50);
             this.guna2Button15.Location = new System.Drawing.Point(528, 443);
             this.guna2Button15.Name = "guna2Button15";
             this.guna2Button15.ShadowDecoration.Parent = this.guna2Button15;
             this.guna2Button15.Size = new System.Drawing.Size(156, 45);
             this.guna2Button15.TabIndex = 15;
-            this.guna2Button15.Text = "L1f3 1S Str4ng3 2";
+            this.guna2Button15.Text = "LIS 2";
             this.guna2Button15.Click += new System.EventHandler(this.guna2Button15_Click);
             // 
             // guna2Button16
@@ -389,12 +394,12 @@
             this.guna2Button18.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button18.ForeColor = System.Drawing.Color.Black;
             this.guna2Button18.HoverState.Parent = this.guna2Button18;
+            this.guna2Button18.Image = global::GCCS_GUI.Properties.Resources.e_commerce_17_512;
             this.guna2Button18.Location = new System.Drawing.Point(918, 517);
             this.guna2Button18.Name = "guna2Button18";
             this.guna2Button18.ShadowDecoration.Parent = this.guna2Button18;
             this.guna2Button18.Size = new System.Drawing.Size(43, 26);
             this.guna2Button18.TabIndex = 18;
-            this.guna2Button18.Text = "Next";
             this.guna2Button18.Click += new System.EventHandler(this.guna2Button18_Click);
             // 
             // guna2Button17
@@ -416,25 +421,6 @@
             this.guna2Button17.TabIndex = 19;
             this.guna2Button17.Text = "X";
             this.guna2Button17.Click += new System.EventHandler(this.guna2Button17_Click);
-            // 
-            // guna2Button19
-            // 
-            this.guna2Button19.AutoRoundedCorners = true;
-            this.guna2Button19.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button19.BorderRadius = 21;
-            this.guna2Button19.CheckedState.Parent = this.guna2Button19;
-            this.guna2Button19.CustomImages.Parent = this.guna2Button19;
-            this.guna2Button19.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.guna2Button19.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button19.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button19.HoverState.Parent = this.guna2Button19;
-            this.guna2Button19.Location = new System.Drawing.Point(420, 155);
-            this.guna2Button19.Name = "guna2Button19";
-            this.guna2Button19.ShadowDecoration.Parent = this.guna2Button19;
-            this.guna2Button19.Size = new System.Drawing.Size(156, 45);
-            this.guna2Button19.TabIndex = 20;
-            this.guna2Button19.Text = "Downloader";
-            this.guna2Button19.Click += new System.EventHandler(this.guna2Button19_Click);
             // 
             // guna2ProgressBar1
             // 
@@ -473,6 +459,7 @@
             this.guna2Button20.TabIndex = 22;
             this.guna2Button20.Text = "Death Stranding";
             this.guna2Button20.Click += new System.EventHandler(this.guna2Button20_Click);
+            this.guna2Button20.MouseHover += new System.EventHandler(this.guna2Button20_MouseHover);
             // 
             // guna2Button21
             // 
@@ -516,19 +503,19 @@
             // 
             this.guna2Button23.AutoRoundedCorners = true;
             this.guna2Button23.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button23.BorderRadius = 21;
+            this.guna2Button23.BorderRadius = 19;
             this.guna2Button23.CheckedState.Parent = this.guna2Button23;
             this.guna2Button23.CustomImages.Parent = this.guna2Button23;
             this.guna2Button23.FillColor = System.Drawing.SystemColors.ControlLight;
             this.guna2Button23.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button23.ForeColor = System.Drawing.Color.Black;
             this.guna2Button23.HoverState.Parent = this.guna2Button23;
-            this.guna2Button23.Location = new System.Drawing.Point(37, 21);
+            this.guna2Button23.Image = global::GCCS_GUI.Properties.Resources.about_icon_png_14;
+            this.guna2Button23.Location = new System.Drawing.Point(12, 12);
             this.guna2Button23.Name = "guna2Button23";
             this.guna2Button23.ShadowDecoration.Parent = this.guna2Button23;
-            this.guna2Button23.Size = new System.Drawing.Size(62, 45);
+            this.guna2Button23.Size = new System.Drawing.Size(51, 41);
             this.guna2Button23.TabIndex = 25;
-            this.guna2Button23.Text = "About";
             this.guna2Button23.Click += new System.EventHandler(this.guna2Button23_Click);
             // 
             // guna2Button24
@@ -542,12 +529,12 @@
             this.guna2Button24.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button24.ForeColor = System.Drawing.Color.Black;
             this.guna2Button24.HoverState.Parent = this.guna2Button24;
+            this.guna2Button24.Image = global::GCCS_GUI.Properties.Resources.arrow_left_chevron_chevronleft_left_left_icon_icon_1320185731545502691;
             this.guna2Button24.Location = new System.Drawing.Point(12, 517);
             this.guna2Button24.Name = "guna2Button24";
             this.guna2Button24.ShadowDecoration.Parent = this.guna2Button24;
             this.guna2Button24.Size = new System.Drawing.Size(43, 26);
             this.guna2Button24.TabIndex = 26;
-            this.guna2Button24.Text = "Back";
             this.guna2Button24.Click += new System.EventHandler(this.guna2Button24_Click);
             // 
             // guna2Button25
@@ -567,6 +554,7 @@
             this.guna2Button25.Size = new System.Drawing.Size(156, 45);
             this.guna2Button25.TabIndex = 27;
             this.guna2Button25.Text = "Crysis Remastered";
+            this.guna2Button25.UseTransparentBackground = true;
             this.guna2Button25.Click += new System.EventHandler(this.guna2Button25_Click);
             // 
             // guna2Button26
@@ -588,6 +576,106 @@
             this.guna2Button26.Text = "Red Dead Redemption 2";
             this.guna2Button26.Click += new System.EventHandler(this.guna2Button26_Click);
             // 
+            // guna2Button27
+            // 
+            this.guna2Button27.AutoRoundedCorners = true;
+            this.guna2Button27.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button27.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button27.BorderRadius = 21;
+            this.guna2Button27.CheckedState.Parent = this.guna2Button27;
+            this.guna2Button27.CustomImages.Parent = this.guna2Button27;
+            this.guna2Button27.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button27.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button27.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button27.HoverState.Parent = this.guna2Button27;
+            this.guna2Button27.Location = new System.Drawing.Point(301, 302);
+            this.guna2Button27.Name = "guna2Button27";
+            this.guna2Button27.ShadowDecoration.Parent = this.guna2Button27;
+            this.guna2Button27.Size = new System.Drawing.Size(156, 45);
+            this.guna2Button27.TabIndex = 29;
+            this.guna2Button27.Text = "StarWars : JFO";
+            this.guna2Button27.Click += new System.EventHandler(this.guna2Button27_Click);
+            // 
+            // guna2Button28
+            // 
+            this.guna2Button28.AutoRoundedCorners = true;
+            this.guna2Button28.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button28.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button28.BorderRadius = 21;
+            this.guna2Button28.CheckedState.Parent = this.guna2Button28;
+            this.guna2Button28.CustomImages.Parent = this.guna2Button28;
+            this.guna2Button28.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button28.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button28.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button28.HoverState.Parent = this.guna2Button28;
+            this.guna2Button28.Location = new System.Drawing.Point(528, 302);
+            this.guna2Button28.Name = "guna2Button28";
+            this.guna2Button28.ShadowDecoration.Parent = this.guna2Button28;
+            this.guna2Button28.Size = new System.Drawing.Size(156, 45);
+            this.guna2Button28.TabIndex = 30;
+            this.guna2Button28.Text = "Saints Row 3  Remastered";
+            this.guna2Button28.Click += new System.EventHandler(this.guna2Button28_Click);
+            // 
+            // guna2Button29
+            // 
+            this.guna2Button29.AutoRoundedCorners = true;
+            this.guna2Button29.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button29.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button29.BorderRadius = 12;
+            this.guna2Button29.CheckedState.Parent = this.guna2Button29;
+            this.guna2Button29.CustomImages.Parent = this.guna2Button29;
+            this.guna2Button29.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2Button29.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button29.ForeColor = System.Drawing.Color.White;
+            this.guna2Button29.HoverState.Parent = this.guna2Button29;
+            this.guna2Button29.Location = new System.Drawing.Point(906, 12);
+            this.guna2Button29.Name = "guna2Button29";
+            this.guna2Button29.ShadowDecoration.Parent = this.guna2Button29;
+            this.guna2Button29.Size = new System.Drawing.Size(27, 31);
+            this.guna2Button29.TabIndex = 31;
+            this.guna2Button29.Text = "−";
+            this.guna2Button29.Click += new System.EventHandler(this.guna2Button29_Click);
+            // 
+            // guna2Button19
+            // 
+            this.guna2Button19.AutoRoundedCorners = true;
+            this.guna2Button19.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button19.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button19.BorderRadius = 21;
+            this.guna2Button19.CheckedState.Parent = this.guna2Button19;
+            this.guna2Button19.CustomImages.Parent = this.guna2Button19;
+            this.guna2Button19.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button19.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button19.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button19.HoverState.Parent = this.guna2Button19;
+            this.guna2Button19.Location = new System.Drawing.Point(756, 302);
+            this.guna2Button19.Name = "guna2Button19";
+            this.guna2Button19.ShadowDecoration.Parent = this.guna2Button19;
+            this.guna2Button19.Size = new System.Drawing.Size(156, 45);
+            this.guna2Button19.TabIndex = 32;
+            this.guna2Button19.Text = "Far Cry New Dawn";
+            this.guna2Button19.Click += new System.EventHandler(this.guna2Button19_Click_1);
+            // 
+            // guna2Button30
+            // 
+            this.guna2Button30.AutoRoundedCorners = true;
+            this.guna2Button30.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button30.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button30.BorderRadius = 21;
+            this.guna2Button30.CheckedState.Parent = this.guna2Button30;
+            this.guna2Button30.CustomImages.Parent = this.guna2Button30;
+            this.guna2Button30.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button30.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button30.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button30.HoverState.Parent = this.guna2Button30;
+            this.guna2Button30.Location = new System.Drawing.Point(87, 369);
+            this.guna2Button30.Name = "guna2Button30";
+            this.guna2Button30.ShadowDecoration.Parent = this.guna2Button30;
+            this.guna2Button30.Size = new System.Drawing.Size(156, 45);
+            this.guna2Button30.TabIndex = 33;
+            this.guna2Button30.Text = "Wolfenstein Youngblood";
+            this.guna2Button30.Click += new System.EventHandler(this.guna2Button30_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -596,6 +684,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GCCS_GUI.Properties.Resources.v475_katie_101_abstractblackandwhitebg_1;
             this.ClientSize = new System.Drawing.Size(976, 555);
+            this.Controls.Add(this.guna2Button30);
+            this.Controls.Add(this.guna2Button19);
+            this.Controls.Add(this.guna2Button29);
+            this.Controls.Add(this.guna2Button28);
+            this.Controls.Add(this.guna2Button27);
             this.Controls.Add(this.guna2Button26);
             this.Controls.Add(this.guna2Button25);
             this.Controls.Add(this.guna2Button24);
@@ -604,7 +697,6 @@
             this.Controls.Add(this.guna2Button21);
             this.Controls.Add(this.guna2Button20);
             this.Controls.Add(this.guna2ProgressBar1);
-            this.Controls.Add(this.guna2Button19);
             this.Controls.Add(this.guna2Button17);
             this.Controls.Add(this.guna2Button18);
             this.Controls.Add(this.guna2Button16);
@@ -628,7 +720,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GCS Utility GUI Alpha";
+            this.Text = "GCCS GUI";
             this.Load += new System.EventHandler(this.main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -656,7 +748,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button16;
         private Guna.UI2.WinForms.Guna2Button guna2Button18;
         private Guna.UI2.WinForms.Guna2Button guna2Button17;
-        private Guna.UI2.WinForms.Guna2Button guna2Button19;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
         private Guna.UI2.WinForms.Guna2Button guna2Button20;
         private Guna.UI2.WinForms.Guna2Button guna2Button21;
@@ -665,6 +756,11 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button24;
         private Guna.UI2.WinForms.Guna2Button guna2Button25;
         private Guna.UI2.WinForms.Guna2Button guna2Button26;
+        private Guna.UI2.WinForms.Guna2Button guna2Button27;
+        private Guna.UI2.WinForms.Guna2Button guna2Button28;
+        private Guna.UI2.WinForms.Guna2Button guna2Button29;
+        private Guna.UI2.WinForms.Guna2Button guna2Button19;
+        private Guna.UI2.WinForms.Guna2Button guna2Button30;
     }
 }
 

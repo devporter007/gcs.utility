@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gdrive));
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2Button29 = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // guna2Button4
@@ -75,7 +77,7 @@
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(186, 45);
             this.guna2Button1.TabIndex = 22;
-            this.guna2Button1.Text = "Using Native Downloader";
+            this.guna2Button1.Text = "Mirror Link";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button2
@@ -96,18 +98,6 @@
             this.guna2Button2.TabIndex = 23;
             this.guna2Button2.Text = "Using Browser";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(146, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 39);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Choose Method";
             // 
             // guna2TextBox1
             // 
@@ -151,6 +141,38 @@
             this.guna2CircleButton1.Text = "OK";
             this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
+            // guna2Button29
+            // 
+            this.guna2Button29.AutoRoundedCorners = true;
+            this.guna2Button29.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button29.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button29.BorderRadius = 12;
+            this.guna2Button29.CheckedState.Parent = this.guna2Button29;
+            this.guna2Button29.CustomImages.Parent = this.guna2Button29;
+            this.guna2Button29.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2Button29.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button29.ForeColor = System.Drawing.Color.White;
+            this.guna2Button29.HoverState.Parent = this.guna2Button29;
+            this.guna2Button29.Location = new System.Drawing.Point(488, 12);
+            this.guna2Button29.Name = "guna2Button29";
+            this.guna2Button29.ShadowDecoration.Parent = this.guna2Button29;
+            this.guna2Button29.Size = new System.Drawing.Size(27, 31);
+            this.guna2Button29.TabIndex = 32;
+            this.guna2Button29.Text = "−";
+            this.guna2Button29.Click += new System.EventHandler(this.guna2Button29_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(182, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 46);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Download";
+            // 
             // gdrive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -159,6 +181,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GCCS_GUI.Properties.Resources.v475_katie_101_abstractblackandwhitebg_1;
             this.ClientSize = new System.Drawing.Size(560, 180);
+            this.Controls.Add(this.guna2Button29);
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.label1);
@@ -166,8 +189,8 @@
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2Button4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "gdrive";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GCS Utility GUI Alpha";
             this.Load += new System.EventHandler(this.main_Load);
@@ -181,9 +204,10 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private System.Windows.Forms.Label label1;
         public Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button29;
+        private System.Windows.Forms.Label label1;
     }
 }
 

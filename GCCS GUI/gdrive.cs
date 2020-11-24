@@ -29,7 +29,7 @@ namespace GCCS_GUI
 
         private void main_Load(object sender, EventArgs e)
         {
-            if (main.Mafia == true || main.sr3m == true)
+            if (main.Mafia == true || main.sr3m == true || main.wolfy == true)
             {
                 guna2Button1.Enabled = true;
             }
@@ -54,6 +54,10 @@ namespace GCCS_GUI
             else if (main.sr3m == true)
             {
                 mirror = "https://drive.google.com/uc?id=1Wl7UNCkPgOkCIySZgb2iHV2DOCjoE3QP";
+            }
+            else if (main.wolfy == true)
+            {
+                mirror = "https://drive.google.com/uc?id=1AMPI7AYCD7Srb-QcTdeznQTnFD7rhAfq";
             }
             Class1.Decider = mirror;
             guna2TextBox1.Text = Class1.Decider;

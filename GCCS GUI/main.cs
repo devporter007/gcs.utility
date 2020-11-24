@@ -44,6 +44,7 @@ namespace GCCS_GUI
             guna2Button28.Visible = false;
             guna2Button30.Visible = false;
             guna2Button19.Visible = false;
+            guna2Button31.Visible = false;
 
         }
 
@@ -77,6 +78,7 @@ namespace GCCS_GUI
             guna2Button28.Visible = true;
             guna2Button19.Visible = true;
             guna2Button30.Visible = true;
+            guna2Button31.Visible = true;
 
 
         }
@@ -182,6 +184,16 @@ namespace GCCS_GUI
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
+            if (messagek == true)
+            {
+                messagek = false;
+                DialogResult dialogResult = MessageBox.Show("Are you running Euro Truck 2 Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Launch Euro Truck 2 from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    return;
+                }
+            }
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\";
             SavDir = $"C:\\Users\\Public\\Documents\\Steam\\CODEX\\227300\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\EU2.zip";
@@ -255,6 +267,17 @@ namespace GCCS_GUI
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            if (messagek == true)
+            {
+                messagek = false;
+                DialogResult dialogResult = MessageBox.Show("Are you running Hitman 2 Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Launch Hitman 2 from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    return;
+                }
+            }
+
             guna2ProgressBar1.Visible = true;
             SavDir = $"C:\\Users\\Public\\Documents\\Steam\\CODEX\\863550\\";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\";
@@ -327,6 +350,16 @@ namespace GCCS_GUI
         public static string AvengersPath = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Marvels Avengers";
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            if (messagek == true)
+            {
+                messagek = false;
+                DialogResult dialogResult = MessageBox.Show("Are you running Plague Tale Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Launch Plague Tale from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    return;
+                }
+            }
             guna2ProgressBar1.Visible = true;
             SavDir = $"C:\\Users\\Public\\Documents\\Steam\\CODEX\\752590\\";
             pather = $"C:\\Program Files (x86)\\Steam\\music\\_database\\cmg_SteamClientMusic.db";
@@ -365,6 +398,16 @@ namespace GCCS_GUI
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
+            if (messagek == true)
+            {
+                messagek = false;
+                DialogResult dialogResult = MessageBox.Show("Are you running Far Cry 4 Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Launch FC-4 from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    return;
+                }
+            }
             guna2ProgressBar1.Visible = true;
             SavDir = $"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Far Cry 4\\bin\\save3dmgames\\";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\FarCry5\\";
@@ -404,6 +447,16 @@ namespace GCCS_GUI
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
+            if (messagek == true)
+            {
+                messagek = false;
+                DialogResult dialogResult = MessageBox.Show("Are you running AC-3:Remastered Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Launch AC3:Remastered from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    return;
+                }
+            }
             SavDir = "C:\\Users\\Public\\Documents\\uPlay\\CODEX\\Saves\\AssassinsCreedIIIRemastered\\";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\Assassin's Creed III Remastered\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\Assassin's Creed III Remastered\\cmg_load.zip";
@@ -548,13 +601,22 @@ namespace GCCS_GUI
 
         private void guna2Button20_Click(object sender, EventArgs e)
         {
-            DeathDecider = true;
-            application = "C: && cd C:/Program Files (x86)/Steam/steamapps/common && cd \"Death Stranding\" && ds.exe";
-            GameName = "DS-Patch.rar -O\"C:/Program Files (x86)/Steam/steamapps/common/Death Stranding/\"";
-            Decider = "https://drive.google.com/uc?id=1boILKcvDO1-DU0RLNMaCS-jygQXxR1nf";
-            Class1.Decider = Decider;
-            new gdrive().Show();
-            this.Hide();
+            DialogResult dialogResult = MessageBox.Show("Are you on Death Stranding Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dialogResult == DialogResult.No)
+            {
+                MessageBox.Show("Use Death Stranding Session and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                return;
+            }
+            if(dialogResult == DialogResult.Yes) {
+                DeathDecider = true;
+                application = "C: && cd C:/Program Files (x86)/Steam/steamapps/common && cd \"Death Stranding\" && ds.exe";
+                GameName = "DS-Patch.rar -O\"C:/Program Files (x86)/Steam/steamapps/common/Death Stranding/\"";
+                Decider = "https://drive.google.com/uc?id=1boILKcvDO1-DU0RLNMaCS-jygQXxR1nf";
+                Class1.Decider = Decider;
+                new gdrive().Show();
+                this.Hide();
+            }
+            
         }
 
         private void guna2Button22_Click(object sender, EventArgs e)
@@ -665,6 +727,7 @@ namespace GCCS_GUI
             guna2Button28.Visible = false;
             guna2Button19.Visible = false;
             guna2Button30.Visible = false;
+            guna2Button31.Visible = false;
 
         }
 
@@ -757,10 +820,67 @@ namespace GCCS_GUI
 
             MessageBox.Show("Far Cry New Dawn is currently not supported by GCS, It will be added soon!", "Coming Soon", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
+        public static bool wolfy;
         private void guna2Button30_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Wolfenstein Youngblood is currently not supported by GCS, It will be added soon!", "Coming Soon", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            wolfy = true;
+            loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\WOLFEN\\";
+            SavDir = $"C:\\Users\\{username}\\Saved Games\\MachineGames\\Wolfenstein Youngblood\\";
+            pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\WOLFEN\\SAV.zip";
+            application = $"B: && cd B:\\ && cd {main.path}\\ && cd \"Wolfenstein.Youngblood\" && cd \"Wolfenstein Youngblood\" && Youngblood_x64vk.exe";
+            GameName = "Wolfenstein.Youngblood.zip";
+            Decider = "https://drive.google.com/uc?id=1jFThJgQjuqHOW32SBj6IK1m0_WLsyC0F";
+            Class1.Decider = Decider;
+            new gdrive().Show();
+            this.Hide();
+        }
+
+        public static bool messagek = true;
+        private void guna2Button31_Click(object sender, EventArgs e)
+        {
+            if (messagek == true) {
+                messagek = false;
+                DialogResult dialogResult = MessageBox.Show("Are you running AC Rogue Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Launch AC Rogue(Steam) from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    return;
+                }
+            }
+            loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACRogue\\";
+            SavDir = $"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Assassin's Creed Rogue\\save3dmgames\\";
+            pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACRogue\\RogueSave.zip";
+            application = "C: && cd C:\\Program Files (x86)\\Steam\\steamapps\\common\\Assassin's Creed Rogue\\ && ACC.exe";
+            if (!File.Exists(main.path + "\\ACR.zip"))
+            {
+                var client = new MegaApiClient();
+                client.LoginAnonymous();
+
+                Uri fileLink = new Uri("https://mega.nz/file/8wMGBZDY#uPlldqgaZgon2T0Zha3hrEQxKdQ6Lm4UPCXx3p_ECpw");
+                INodeInfo node = client.GetNodeFromLink(fileLink);
+                client.DownloadFile(fileLink, node.Name);
+                MessageBox.Show("Downloaded Completed, Press button again");
+                client.Logout();
+                return;
+            }
+            if (File.Exists(main.path + "ACR.zip"))
+            {
+                using (var archive = ZipArchive.Open("ACR.zip"))
+                {
+                    foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                    {
+                        entry.WriteToDirectory("C:\\Program Files (x86)\\Steam\\steamapps\\common\\Assassin's Creed Rogue\\", new ExtractionOptions()
+                        {
+                            ExtractFullPath = true,
+                            Overwrite = true
+                        });
+                    }
+                }
+                MessageBox.Show("Files Extracted Successfully");
+                new finalSave().Show();
+                this.Hide();
+                return;
+            }
         }
     }
 }

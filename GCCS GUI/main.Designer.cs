@@ -63,6 +63,8 @@
             this.guna2Button29 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button19 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button30 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button31 = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -503,18 +505,18 @@
             // 
             this.guna2Button23.AutoRoundedCorners = true;
             this.guna2Button23.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button23.BorderRadius = 19;
+            this.guna2Button23.BorderRadius = 24;
             this.guna2Button23.CheckedState.Parent = this.guna2Button23;
             this.guna2Button23.CustomImages.Parent = this.guna2Button23;
-            this.guna2Button23.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button23.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button23.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button23.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button23.ForeColor = System.Drawing.Color.White;
             this.guna2Button23.HoverState.Parent = this.guna2Button23;
             this.guna2Button23.Image = global::GCCS_GUI.Properties.Resources.about_icon_png_14;
-            this.guna2Button23.Location = new System.Drawing.Point(12, 12);
+            this.guna2Button23.Location = new System.Drawing.Point(-6, -8);
             this.guna2Button23.Name = "guna2Button23";
             this.guna2Button23.ShadowDecoration.Parent = this.guna2Button23;
-            this.guna2Button23.Size = new System.Drawing.Size(51, 41);
+            this.guna2Button23.Size = new System.Drawing.Size(61, 51);
             this.guna2Button23.TabIndex = 25;
             this.guna2Button23.Click += new System.EventHandler(this.guna2Button23_Click);
             // 
@@ -676,6 +678,41 @@
             this.guna2Button30.Text = "Wolfenstein Youngblood";
             this.guna2Button30.Click += new System.EventHandler(this.guna2Button30_Click);
             // 
+            // guna2Button31
+            // 
+            this.guna2Button31.AutoRoundedCorners = true;
+            this.guna2Button31.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button31.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button31.BorderRadius = 21;
+            this.guna2Button31.CheckedState.Parent = this.guna2Button31;
+            this.guna2Button31.CustomImages.Parent = this.guna2Button31;
+            this.guna2Button31.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button31.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button31.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button31.HoverState.Parent = this.guna2Button31;
+            this.guna2Button31.Location = new System.Drawing.Point(301, 369);
+            this.guna2Button31.Name = "guna2Button31";
+            this.guna2Button31.ShadowDecoration.Parent = this.guna2Button31;
+            this.guna2Button31.Size = new System.Drawing.Size(156, 45);
+            this.guna2Button31.TabIndex = 34;
+            this.guna2Button31.Text = "AC Rogue";
+            this.guna2Button31.Click += new System.EventHandler(this.guna2Button31_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(296, 166);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(420, 27);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Latest :- Wolfenstein Youngblood Added";
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -684,6 +721,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GCCS_GUI.Properties.Resources.v475_katie_101_abstractblackandwhitebg_1;
             this.ClientSize = new System.Drawing.Size(976, 555);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.guna2Button31);
             this.Controls.Add(this.guna2Button30);
             this.Controls.Add(this.guna2Button19);
             this.Controls.Add(this.guna2Button29);
@@ -724,6 +763,7 @@
             this.Load += new System.EventHandler(this.main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -761,6 +801,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button29;
         private Guna.UI2.WinForms.Guna2Button guna2Button19;
         private Guna.UI2.WinForms.Guna2Button guna2Button30;
+        private Guna.UI2.WinForms.Guna2Button guna2Button31;
+        private System.Windows.Forms.Label label1;
     }
 }
 

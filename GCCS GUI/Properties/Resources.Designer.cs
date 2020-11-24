@@ -113,6 +113,16 @@ namespace GCCS_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap information_icon_white_4 {
+            get {
+                object obj = ResourceManager.GetObject("information-icon-white-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap top_best_021 {
             get {
                 object obj = ResourceManager.GetObject("top-best-021", resourceCulture);

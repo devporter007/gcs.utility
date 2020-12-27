@@ -65,6 +65,11 @@
             this.guna2Button30 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button31 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2Button32 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button33 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button34 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button35 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button36 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -707,20 +712,125 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(296, 166);
+            this.label1.Location = new System.Drawing.Point(241, 179);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(420, 27);
+            this.label1.Size = new System.Drawing.Size(0, 27);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Latest :- Wolfenstein Youngblood Added";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2Button32
+            // 
+            this.guna2Button32.AutoRoundedCorners = true;
+            this.guna2Button32.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button32.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button32.BorderRadius = 21;
+            this.guna2Button32.CheckedState.Parent = this.guna2Button32;
+            this.guna2Button32.CustomImages.Parent = this.guna2Button32;
+            this.guna2Button32.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button32.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button32.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button32.HoverState.Parent = this.guna2Button32;
+            this.guna2Button32.Location = new System.Drawing.Point(528, 369);
+            this.guna2Button32.Name = "guna2Button32";
+            this.guna2Button32.ShadowDecoration.Parent = this.guna2Button32;
+            this.guna2Button32.Size = new System.Drawing.Size(156, 45);
+            this.guna2Button32.TabIndex = 36;
+            this.guna2Button32.Text = "Cyberpunk 2077";
+            this.guna2Button32.Click += new System.EventHandler(this.guna2Button32_Click);
+            // 
+            // guna2Button33
+            // 
+            this.guna2Button33.AutoRoundedCorners = true;
+            this.guna2Button33.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button33.BorderRadius = 21;
+            this.guna2Button33.CheckedState.Parent = this.guna2Button33;
+            this.guna2Button33.CustomImages.Parent = this.guna2Button33;
+            this.guna2Button33.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button33.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button33.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button33.HoverState.Parent = this.guna2Button33;
+            this.guna2Button33.Location = new System.Drawing.Point(195, 161);
+            this.guna2Button33.Name = "guna2Button33";
+            this.guna2Button33.ShadowDecoration.Parent = this.guna2Button33;
+            this.guna2Button33.Size = new System.Drawing.Size(156, 45);
+            this.guna2Button33.TabIndex = 37;
+            this.guna2Button33.Text = "Desktop";
+            this.guna2Button33.Click += new System.EventHandler(this.guna2Button33_Click);
+            // 
+            // guna2Button34
+            // 
+            this.guna2Button34.AutoRoundedCorners = true;
+            this.guna2Button34.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button34.BorderRadius = 21;
+            this.guna2Button34.CheckedState.Parent = this.guna2Button34;
+            this.guna2Button34.CustomImages.Parent = this.guna2Button34;
+            this.guna2Button34.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button34.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button34.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button34.HoverState.Parent = this.guna2Button34;
+            this.guna2Button34.Location = new System.Drawing.Point(637, 161);
+            this.guna2Button34.Name = "guna2Button34";
+            this.guna2Button34.ShadowDecoration.Parent = this.guna2Button34;
+            this.guna2Button34.Size = new System.Drawing.Size(156, 45);
+            this.guna2Button34.TabIndex = 38;
+            this.guna2Button34.Text = "Browser & Explorer";
+            this.guna2Button34.Click += new System.EventHandler(this.guna2Button34_Click);
+            // 
+            // guna2Button35
+            // 
+            this.guna2Button35.AutoRoundedCorners = true;
+            this.guna2Button35.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button35.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button35.BorderRadius = 21;
+            this.guna2Button35.CheckedState.Parent = this.guna2Button35;
+            this.guna2Button35.CustomImages.Parent = this.guna2Button35;
+            this.guna2Button35.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button35.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button35.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button35.HoverState.Parent = this.guna2Button35;
+            this.guna2Button35.Location = new System.Drawing.Point(756, 369);
+            this.guna2Button35.Name = "guna2Button35";
+            this.guna2Button35.ShadowDecoration.Parent = this.guna2Button35;
+            this.guna2Button35.Size = new System.Drawing.Size(156, 45);
+            this.guna2Button35.TabIndex = 39;
+            this.guna2Button35.Text = "Horizon Zero Dawn";
+            this.guna2Button35.Click += new System.EventHandler(this.guna2Button35_Click);
+            // 
+            // guna2Button36
+            // 
+            this.guna2Button36.AutoRoundedCorners = true;
+            this.guna2Button36.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button36.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button36.BorderRadius = 21;
+            this.guna2Button36.CheckedState.Parent = this.guna2Button36;
+            this.guna2Button36.CustomImages.Parent = this.guna2Button36;
+            this.guna2Button36.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2Button36.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button36.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button36.HoverState.Parent = this.guna2Button36;
+            this.guna2Button36.Location = new System.Drawing.Point(87, 443);
+            this.guna2Button36.Name = "guna2Button36";
+            this.guna2Button36.ShadowDecoration.Parent = this.guna2Button36;
+            this.guna2Button36.Size = new System.Drawing.Size(156, 45);
+            this.guna2Button36.TabIndex = 40;
+            this.guna2Button36.Text = "GTA V";
+            this.guna2Button36.Click += new System.EventHandler(this.guna2Button36_Click);
             // 
             // main
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GCCS_GUI.Properties.Resources.v475_katie_101_abstractblackandwhitebg_1;
             this.ClientSize = new System.Drawing.Size(976, 555);
+            this.Controls.Add(this.guna2Button36);
+            this.Controls.Add(this.guna2Button35);
+            this.Controls.Add(this.guna2Button34);
+            this.Controls.Add(this.guna2Button33);
+            this.Controls.Add(this.guna2Button32);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button31);
             this.Controls.Add(this.guna2Button30);
@@ -803,6 +913,11 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button30;
         private Guna.UI2.WinForms.Guna2Button guna2Button31;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button32;
+        private Guna.UI2.WinForms.Guna2Button guna2Button33;
+        private Guna.UI2.WinForms.Guna2Button guna2Button34;
+        private Guna.UI2.WinForms.Guna2Button guna2Button35;
+        private Guna.UI2.WinForms.Guna2Button guna2Button36;
     }
 }
 

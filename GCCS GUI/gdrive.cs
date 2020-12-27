@@ -29,7 +29,7 @@ namespace GCCS_GUI
 
         private void main_Load(object sender, EventArgs e)
         {
-            if (main.Mafia == true || main.sr3m == true || main.wolfy == true)
+            if (main.Mafia == true || main.sr3m == true || main.wolfy == true || main.fcdawn == true)
             {
                 guna2Button1.Enabled = true;
             }
@@ -59,6 +59,10 @@ namespace GCCS_GUI
             {
                 mirror = "https://drive.google.com/uc?id=1AMPI7AYCD7Srb-QcTdeznQTnFD7rhAfq";
             }
+            else if (main.fcdawn == true)
+            {
+                mirror = "https://drive.google.com/uc?id=1s2lGVYd299nJWJQ-2lVhSmkdifty--z9";
+            }
             Class1.Decider = mirror;
             guna2TextBox1.Text = Class1.Decider;
         }
@@ -76,22 +80,26 @@ namespace GCCS_GUI
                 client.DownloadFile(fileLink, node.Name);
                 client.Logout();
 
-                var clientv = new MegaApiClient();
-                clientv.LoginAnonymous();
-
-                Uri fileLinkv = new Uri("https://mega.nz/file/g49gyRgT#ppKAGJhkjpwR7Ftbhf6htFvM-FKIQYOdCuNvVk9Ywuc");
-                INodeInfo nodev = clientv.GetNodeFromLink(fileLinkv);
-                clientv.DownloadFile(fileLinkv, nodev.Name);
-                clientv.Logout();
-
+                Uri target = new Uri("https://gcs-stbackend.s3.ap-south-1.amazonaws.com/Firefox.zip");
+                wc.DownloadFile(target, "Firefox.zip");
+             
                 var clienta = new MegaApiClient();
                 clienta.LoginAnonymous();
 
                 Uri fileLinka = new Uri("https://mega.nz/file/h5VTWaJJ#WQwVMRJaN4FisXpuHapgd518x5QMoq-KHQ-E2G0jlyA");
                 INodeInfo nodea = clienta.GetNodeFromLink(fileLinka);
-                clienta.DownloadFile(fileLinka, nodea.Name);
-                MessageBox.Show("Press Button Again!", "Proceed");
+                clienta.DownloadFile(fileLinka, nodea.Name);               
                 clienta.Logout();
+                if (File.Exists("fireandee.exe") && File.Exists("Firefox.zip") && File.Exists("EE.exe"))
+                {
+                    System.Diagnostics.Process process = new System.Diagnostics.Process();
+                    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    startInfo.FileName = "cmd.exe";
+                    startInfo.Arguments = "/C fireandee.exe";
+                    process.StartInfo = startInfo;
+                    process.Start();
+                }
                 return;
                 
 
@@ -105,7 +113,9 @@ namespace GCCS_GUI
                 startInfo.Arguments = "/C fireandee.exe";
                 process.StartInfo = startInfo;
                 process.Start();
+                return;
             }
+            
         }
         private void FileDownloadComplete(object sender, AsyncCompletedEventArgs e)
         {

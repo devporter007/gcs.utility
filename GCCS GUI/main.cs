@@ -45,6 +45,9 @@ namespace GCCS_GUI
             guna2Button30.Visible = false;
             guna2Button19.Visible = false;
             guna2Button31.Visible = false;
+            guna2Button32.Visible = false;
+            guna2Button35.Visible = false;
+            guna2Button36.Visible = false;
 
         }
 
@@ -79,7 +82,9 @@ namespace GCCS_GUI
             guna2Button19.Visible = true;
             guna2Button30.Visible = true;
             guna2Button31.Visible = true;
-
+            guna2Button32.Visible = true;
+            guna2Button35.Visible = true;
+            guna2Button36.Visible = true;
 
         }
 
@@ -94,7 +99,7 @@ namespace GCCS_GUI
             SavDir = "C:\\Users\\Public\\Documents\\uPlay\\CODEX\\Saves\\FarCry5\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\FarCry5\\cmg_load.zip";
             FC5Decider = true;
-            application = "cd C:/Program Files (x86)/Steam/steamapps/common/FarCry5/bin/ && C: && FarCry5.exe";
+            application = "C:/Program Files (x86)/Steam/steamapps/common/FarCry5/bin/FarCry5.exe";
 
 
             if (!File.Exists(main.path + "\\FarCero5.zip"))
@@ -105,8 +110,25 @@ namespace GCCS_GUI
                 Uri fileLink = new Uri("https://mega.nz/file/B8sU3Dba#QhcCgH2Qd2kIvkiy0xUFsi1uGc8vc1foytSBoMEiYiY");
                 INodeInfo node = client.GetNodeFromLink(fileLink);
                 client.DownloadFile(fileLink, node.Name);
-                MessageBox.Show("Downloaded Completed, Press button again");
                 client.Logout();
+                if (File.Exists(main.path + "FarCero5.zip"))
+                {
+                    using (var archive = ZipArchive.Open("FarCero5.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory(main.FC5Path + "\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    MessageBox.Show("Files Extracted Successfully");
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
                 return;
             }
             if (File.Exists(main.path + "FarCero5.zip"))
@@ -149,7 +171,7 @@ namespace GCCS_GUI
             SavDir = $"C:\\Users\\{username}\\AppData\\Roaming\\uplay_emu\\EMPRESS\\5059\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\cmg_load.zip";
             OdysseyDecider = true;
-            application = "cd C:/Program Files (x86)/Steam/steamapps/common/Assassins Creed Odyssey/ && C: && ACOdyssey.exe";
+            application = "C:/Program Files (x86)/Steam/steamapps/common/Assassins Creed Odyssey/ACOdyssey.exe";
             if (!File.Exists(main.path + "\\Odyssey.zip"))
             {
                 var client = new MegaApiClient();
@@ -160,6 +182,24 @@ namespace GCCS_GUI
                 client.DownloadFile(fileLink, node.Name);
                 MessageBox.Show("Downloaded Completed, Press button again");
                 client.Logout();
+                if (File.Exists(main.path + "Odyssey.zip"))
+                {
+                    using (var archive = ZipArchive.Open("Odyssey.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory(main.OdysseyPath + "\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    MessageBox.Show("Files Extracted Successfully");
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
                 return;
             }
             if (File.Exists(main.path + "Odyssey.zip"))
@@ -197,7 +237,7 @@ namespace GCCS_GUI
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\";
             SavDir = $"C:\\Users\\Public\\Documents\\Steam\\CODEX\\227300\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\EU2.zip";
-            application = "C: && cd C:/Program Files (x86)/Steam/steamapps/common/Euro Truck Simulator 2/bin/win_x64/eurotrucks2.exe";
+            application = "C:/Program Files (x86)/Steam/steamapps/common/Euro Truck Simulator 2/bin/win_x64/eurotrucks2.exe";
             if (!File.Exists(main.path + "\\euro-truck-2.zip"))
             {
                 var client = new MegaApiClient();
@@ -208,6 +248,24 @@ namespace GCCS_GUI
                 client.DownloadFile(fileLink, node.Name);
                 MessageBox.Show("Downloaded Completed, Press button again");
                 client.Logout();
+                if (File.Exists(main.path + "euro-truck-2.zip"))
+                {
+                    using (var archive = ZipArchive.Open("euro-truck-2.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory(main.EU2Path + "\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    MessageBox.Show("Files Extracted Successfully");
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
                 return;
             }
             if (File.Exists(main.path + "euro-truck-2.zip"))
@@ -243,6 +301,24 @@ namespace GCCS_GUI
                 client.DownloadFile(fileLink, node.Name);
                 MessageBox.Show("Downloaded Completed, Press button again");
                 client.Logout();
+                if (File.Exists(main.path + "Engine.zip"))
+                {
+                    using (var archive = ZipArchive.Open("Engine.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory(main.LIS2Path + "\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    MessageBox.Show("Files Extracted Successfully");
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
                 return;
             }
             if (File.Exists(main.path + "Engine.zip"))
@@ -273,7 +349,7 @@ namespace GCCS_GUI
                 DialogResult dialogResult = MessageBox.Show("Are you running Hitman 2 Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("Launch Hitman 2 from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    MessageBox.Show("Launch Hitman 2 Session Brow");
                     return;
                 }
             }
@@ -282,14 +358,32 @@ namespace GCCS_GUI
             SavDir = $"C:\\Users\\Public\\Documents\\Steam\\CODEX\\863550\\";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\cmg_loadHITMAN2.zip";
-            application = "C: && cd C:/Program Files (x86)/Steam/steamapps/common/HITMAN2/ && Launcher.exe";
+            application = "C:/Program Files (x86)/Steam/steamapps/common/HITMAN2/Launcher.exe";
             if (!File.Exists(main.path + "\\hm2.zip"))
             {
-                wc.DownloadFileCompleted += new AsyncCompletedEventHandler(FileDownloadComplete);
+           
                 wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
                 Uri target = new Uri("https://cdn.discordapp.com/attachments/728493236154269707/762372067953082418/hm2.zip");
                 wc.DownloadFileAsync(target, "hm2.zip");
-
+                MessageBox.Show("Download Completed, Click OK to proceed", "Note");
+                if (File.Exists(main.path + "\\hm2.zip"))
+                {
+                    using (var archive = ZipArchive.Open("hm2.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory(main.hitmanPath + "\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    MessageBox.Show("Files Extracted Successfully");
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
                 return;
             }
 
@@ -364,14 +458,33 @@ namespace GCCS_GUI
             SavDir = $"C:\\Users\\Public\\Documents\\Steam\\CODEX\\752590\\";
             pather = $"C:\\Program Files (x86)\\Steam\\music\\_database\\cmg_SteamClientMusic.db";
             loadC = $"C:\\Program Files (x86)\\Steam\\music\\_database\\";
-            application = "cd C:/Program Files (x86)/Steam/steamapps/common/A Plague Tale Innocence/ && C: && APlagueTaleInnocence_x64.exe";
+            application = "C:/Program Files (x86)/Steam/steamapps/common/A Plague Tale Innocence/APlagueTaleInnocence_x64.exe";
 
             if (!File.Exists(main.path + "\\plagcra.zip"))
             {
-                wc.DownloadFileCompleted += new AsyncCompletedEventHandler(FileDownloadComplete);
+              
                 wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
                 Uri target = new Uri("https://cdn.discordapp.com/attachments/613186365911203845/762370705068523551/plagcra.zip");
                 wc.DownloadFileAsync(target, "plagcra.zip");
+                MessageBox.Show("Download Completed, Click OK to proceed", "Note");
+                if (File.Exists(main.path + "\\plagcra.zip"))
+                {
+                    using (var archive = ZipArchive.Open("plagcra.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory(main.PlagPath + "\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    MessageBox.Show("Files Extracted Successfully");
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
 
                 return;
             }
@@ -413,15 +526,33 @@ namespace GCCS_GUI
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\FarCry5\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\FarCry5\\cmg_fc4.zip";
             FC4Decider = true;
-            application = "cd C:/Program Files (x86)/Steam/steamapps/common/Far Cry 4/bin/ && C: && FarCry4.exe";
+            application = "C:/Program Files (x86)/Steam/steamapps/common/Far Cry 4/bin/FarCry4.exe";
 
             if (!File.Exists(main.path + "\\bin.zip"))
             {
-                wc.DownloadFileCompleted += new AsyncCompletedEventHandler(FileDownloadComplete);
+                
                 wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
                 Uri target = new Uri("https://cdn.discordapp.com/attachments/728493236154269707/753173730640789594/bin.zip");
                 wc.DownloadFileAsync(target, "bin.zip");
-
+                MessageBox.Show("Download Completed, Click OK to proceed", "Note");
+                if (File.Exists(main.path + "\\bin.zip"))
+                {
+                    using (var archive = ZipArchive.Open("bin.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory(main.FC4Path + "\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    MessageBox.Show("Files Extracted Successfully");
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
                 return;
             }
 
@@ -453,14 +584,14 @@ namespace GCCS_GUI
                 DialogResult dialogResult = MessageBox.Show("Are you running AC-3:Remastered Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("Launch AC3:Remastered from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    MessageBox.Show("Launch AC3:Remastered from GFN and then use GCS");
                     return;
                 }
             }
             SavDir = "C:\\Users\\Public\\Documents\\uPlay\\CODEX\\Saves\\AssassinsCreedIIIRemastered\\";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\Assassin's Creed III Remastered\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\Assassin's Creed III Remastered\\cmg_load.zip";
-            application = "cd C:/Program Files (x86)/Steam/steamapps/common/Assassin's Creed III Remastered/ && C: && ACIII.launcher.exe";
+            application = "C:/Program Files (x86)/Steam/steamapps/common/Assassin's Creed III Remastered/ACIII.launcher.exe";
             if (!File.Exists(main.path + "\\ac3-r.zip"))
             {
                 var client = new MegaApiClient();
@@ -471,6 +602,24 @@ namespace GCCS_GUI
                 client.DownloadFile(fileLink, node.Name);
                 MessageBox.Show("Downloaded Completed, Press button again");
                 client.Logout();
+                if (File.Exists(main.path + "ac3-r.zip"))
+                {
+                    using (var archive = ZipArchive.Open("ac3-r.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory(main.ACIIIPath + "\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    MessageBox.Show("Files Extracted Successfully");
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
                 return;
             }
             if (File.Exists(main.path + "ac3-r.zip"))
@@ -498,7 +647,7 @@ namespace GCCS_GUI
             SavDir = $"C:\\Users\\{username}\\Saved Games\\Mojang Studios\\Dungeons\\";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\minedung.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && minecraft_server.exe";
+            application = $"{main.path}\\minecraft_server.exe";
             GameName = "MinDung.zip";
             Decider = "https://drive.google.com/uc?id=11ajpHocRxhAgOzdAZUYPUWU6Ox3TLeGs";
             Class1.Decider = Decider;
@@ -511,7 +660,7 @@ namespace GCCS_GUI
             SavDir = $"C:\\Users\\Public\\Documents\\Steam\\CODEX\\952060\\";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\resident3.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && cd Resident.Evil.3 && cd RE3 && re3.exe";
+            application = $"{main.path}\\Resident.Evil.3\\RE3\\re3.exe";
             GameName = "Resident.Evil.3.zip";
             Decider = "https://drive.google.com/uc?id=1ad2-_KROUJ7oijAPluqj_uXWX4ZDszij";
             Class1.Decider = Decider;
@@ -524,7 +673,7 @@ namespace GCCS_GUI
             SavDir = $"C:\\Users\\{username}\\Saved Games\\id Software\\";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\DoomVK\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\DoomVK\\doomsav.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && DOOMEternalx64vk.exe";
+            application = $"{main.path}\\DOOMEternalx64vk.exe";
             GameName = "doom eternal part 1.rar";
             GameName2 = "doom eternal part 2.rar";
             DoomDecider = true;
@@ -536,7 +685,7 @@ namespace GCCS_GUI
 
         private void guna2Button11_Click(object sender, EventArgs e)
         {
-            application = $"B: && cd B:\\ && cd {main.path}\\ && cd The.Dark.Pictures.Anthology.Little.Hope && \"The Dark Pictures Anthology\" && LittleHope.exe";
+            application = $"{main.path}\\The.Dark.Pictures.Anthology.Little.Hope\\The Dark Pictures Anthology\\LittleHope.exe";
             GameName = "The.Dark.Pictures.Anthology.Little.Hope.zip";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\DARKPICTURES\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\DARKPICTURES\\LITTLEHOPE.zip";
@@ -552,7 +701,7 @@ namespace GCCS_GUI
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\PlanetCoaster\\";
             SavDir = $"C:\\Users\\{username}\\Saved Games\\Frontier Developments\\Planet Coaster\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\PlanetCoaster\\PlanetCoasterSAV.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && cd \"Planet Coaster\" && PlanetCoaster.exe";
+            application = $"{main.path}\\Planet Coaster\\PlanetCoaster.exe";
             GameName = "PlanetCoaster.rar";
             Decider = "https://drive.google.com/uc?id=1SzhlkRnkIR7zUR40U--MuXUBTUoHjBhZ";
             Class1.Decider = Decider;
@@ -565,7 +714,7 @@ namespace GCCS_GUI
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\SOTR\\";
             SavDir = $"C:\\Users\\{username}\\Documents\\CPY_SAVES\\CPY\\750920\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\SOTR\\SOTR.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && SOTTR.exe";
+            application = $"{main.path}\\SOTTR.exe";
             GameName = "SOTR.zip";
             Decider = "https://drive.google.com/uc?id=1HQwVso9TJt_cSSwODtn6vrLhO7hwTr1r";
             Class1.Decider = Decider;
@@ -591,7 +740,7 @@ namespace GCCS_GUI
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\GhostRunner\\";
             SavDir = $"C:\\Users\\{username}\\AppData\\Local\\Ghostrunner\\Saved\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\GhostRunner\\GhostRunner.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && cd GhostRunner && cd Ghostrunner && cd Binaries && cd Win64 && Ghostrunner-Win64-Shipping.exe";
+            application = $"{main.path}\\GhostRunner\\Ghostrunner\\Binaries\\Win64\\Ghostrunner-Win64-Shipping.exe";
             GameName = "GhostRunner.zip";
             Decider = "https://drive.google.com/uc?id=1f0wIE6Q3Ilyaw9xowHIQXeINwzBq1qT2";
             Class1.Decider = Decider;
@@ -609,7 +758,7 @@ namespace GCCS_GUI
             }
             if(dialogResult == DialogResult.Yes) {
                 DeathDecider = true;
-                application = "C: && cd C:/Program Files (x86)/Steam/steamapps/common && cd \"Death Stranding\" && ds.exe";
+                application = "C:/Program Files (x86)/Steam/steamapps/common/Death Stranding/ds.exe";
                 GameName = "DS-Patch.rar -O\"C:/Program Files (x86)/Steam/steamapps/common/Death Stranding/\"";
                 Decider = "https://drive.google.com/uc?id=1boILKcvDO1-DU0RLNMaCS-jygQXxR1nf";
                 Class1.Decider = Decider;
@@ -625,7 +774,7 @@ namespace GCCS_GUI
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\MafiaDE\\";
             SavDir = $"C:\\Users\\{username}\\Documents\\My Games\\Mafia Definitive Edition\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\MafiaDE\\MafiaDE.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && cd Mafia.Definitive.Edition && cd \"Mafia - Definitive Edition\" && launcher.exe";
+            application = $"{main.path}\\Mafia.Definitive.Edition\\Mafia - Definitive Edition\\launcher.exe";
             GameName = "Mafia.Definitive.Edition.zip";
             Decider = "https://drive.google.com/uc?id=1-BmBJm3wVQJ6SBQT82TH1lMOPeX3QeY5";
             Class1.Decider = Decider;
@@ -635,7 +784,7 @@ namespace GCCS_GUI
 
         private void guna2Button21_Click(object sender, EventArgs e)
         {
-            application = "C: && cd C:/Program Files (x86)/Steam/steamapps/common && cd \"Marvels Avengers\" && avengers.exe";
+            application = "C:/Program Files (x86)/Steam/steamapps/common/Marvels Avengers/avengers.exe";
             if (!File.Exists(main.path + "\\Avengers.zip"))
             {
                 var client = new MegaApiClient();
@@ -653,9 +802,28 @@ namespace GCCS_GUI
                 Uri fileLinka = new Uri("https://mega.nz/file/Q8s2xRxb#gnT0Yr2brZTrbFrsr7RcSand6GBO0w_nDISZ2pIWpic");
                 INodeInfo nodea = clienta.GetNodeFromLink(fileLinka);
                 clienta.DownloadFile(fileLinka, nodea.Name);
-                MessageBox.Show($"Downloaded Completed, Press button again");
+                
                 clienta.Logout();
-
+                if (File.Exists(main.path + $"\\Avengers.zip"))
+                {
+                    using (var archive = ZipArchive.Open("Avengers.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory(main.AvengersPath + "\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    string strCmdText;
+                    strCmdText = $"/C B: && B:\\ && cd GCS && move bigfile.update2.000.000.tiger \"{main.AvengersPath}\\\"";
+                    Process.Start("CMD.exe", strCmdText);
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
                 return;
             }
             if (File.Exists(main.path + $"\\Avengers.zip"))
@@ -728,6 +896,10 @@ namespace GCCS_GUI
             guna2Button19.Visible = false;
             guna2Button30.Visible = false;
             guna2Button31.Visible = false;
+            guna2Button32.Visible = false;
+            guna2Button35.Visible = false;
+            guna2Button36.Visible = false;
+
 
         }
 
@@ -736,7 +908,7 @@ namespace GCCS_GUI
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\CrysisRem\\";
             SavDir = $"C:\\Users\\{username}\\Saved Games\\CrysisRemastered\\SaveGames\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\CrysisRem\\CrysisRem.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && cd \"Crysis Remastered\" && cd Bin64 && CrysisRemastered.exe";
+            application = $"{main.path}\\Crysis Remastered\\Bin64\\CrysisRemastered.exe";
             GameName = "CrysisRemastered.zip";
             Decider = "https://drive.google.com/uc?id=1jxs3QiG_4mnDp-7g8aixjH9pUbpflPiQ";
             Class1.Decider = Decider;
@@ -746,28 +918,53 @@ namespace GCCS_GUI
 
         private void guna2Button26_Click(object sender, EventArgs e)
         {
+            Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone");
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\Assassin's Creed III Remastered\\";
-            MessageBox.Show("Highly Unstable, Use on your own risk");
-            guna2ProgressBar1.Visible = true;
             SavDir = $"C:\\Users\\{username}\\AppData\\Roaming\\Goldberg SocialClub Emu Saves\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\Assassin's Creed III Remastered\\itsrdr2bitch.zip";
-            application = "B: && cd B:\\ && cd D && Launcher.exe";
-            if (!File.Exists(main.path + "\\rdr2automator.exe"))
+            application = $"{main.path}\\RDR2\\Launcher.exe";
+            if (!File.Exists(main.path + "\\dinker.exe"))
             {
-                wc.DownloadFileCompleted += new AsyncCompletedEventHandler(FileDownloadComplete);
-                wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
-                Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.0.00001/rdr2automator.exe");
-                wc.DownloadFileAsync(target, "rdr2automator.exe");
+                Uri config = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/789551821814628382/rclone.conf");
+                Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.23/dinker.exe");
+                wc.DownloadFile(config, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone\\rclone.conf");
+                wc.DownloadFile(target, "dinker.exe");
+                if (File.Exists(main.path + "\\dinker.exe"))
+                {
+                    new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = $"{main.path}\\dinker.exe",
+                            UseShellExecute = false,
+                            RedirectStandardOutput = false,
+                            RedirectStandardError = false,
+                            Arguments = $"copy -P Sensie-Disk:\\D\\ {main.path}\\RDR2 --drive-acknowledge-abuse"
+                        }
+                    }.Start();
+                    new finalSave().Show();
+                    this.Hide();
 
+                    //string strCmdText = $"/C dinker.exe -P Sensie-Disk:\\GCS\\OBS.zip \"C:\\Users\\91912\\Documents\\rclone-v1.53.3-windows-amd64_2\\\"";
+
+                }
                 return;
             }
-
-            if (File.Exists(main.path + "\\rdr2automator.exe"))
+            if (File.Exists(main.path + "\\dinker.exe"))
             {
-                Process.Start(main.path + "\\rdr2automator.exe");
+                new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = $"{main.path}\\dinker.exe",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = false,
+                        RedirectStandardError = false,
+                        Arguments = $"copy -P Sensie-Disk:\\D\\ {main.path}\\RDR2 --drive-acknowledge-abuse"
+                    }
+                }.Start();
                 new finalSave().Show();
                 this.Hide();
-                return;
             }
             
         }
@@ -780,15 +977,58 @@ namespace GCCS_GUI
 
         private void guna2Button27_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Credits to Arcade for Star Wars Jedi Fallen Order", "Credits");
+            Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone");
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\STARWARSJEDI\\";
             SavDir = $"C:\\Users\\{username}\\Saved Games\\Respawn\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\STARWARSJEDI\\SAVDE.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && cd \"SwGame\" && cd Binaries && starwarsjedifallenorder.exe";
-            GameName = "Star Wars Jedi Fallen Order.zip";
-            Decider = "https://drive.google.com/uc?id=1zgFsRvefdR82UKHMrja7Lz6-PGmu56A7";
-            Class1.Decider = Decider;
-            new gdrive().Show();
-            this.Hide();
+            application = $"{main.path}\\SWJFO\\SwGame\\Binaries\\Win64\\starwarsjedifallenorder.exe";
+
+            if (!File.Exists(main.path + "\\dinker.exe"))
+            {
+                Uri config = new Uri("https://cdn.discordapp.com/attachments/754055553470431346/785324651214798908/rclone.conf");
+                Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.23/dinker.exe");
+                wc.DownloadFile(config, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone\\rclone.conf");
+                wc.DownloadFile(target, "dinker.exe");
+                if (File.Exists(main.path + "\\dinker.exe"))
+                {
+                    new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = $"{main.path}\\dinker.exe",
+                            UseShellExecute = false,
+                            RedirectStandardOutput = false,
+                            RedirectStandardError = false,
+                            Arguments = $"copy -P \"ArcadeBackup2:FireForce/Star Wars Jedi Fallen Order\" {main.path}\\SWJFO --drive-acknowledge-abuse"
+                        }
+                    }.Start();
+                    new finalSave().Show();
+                    this.Hide();
+
+                    //string strCmdText = $"/C dinker.exe -P Sensie-Disk:\\GCS\\OBS.zip \"C:\\Users\\91912\\Documents\\rclone-v1.53.3-windows-amd64_2\\\"";
+
+                }
+                return;
+            }
+            if (File.Exists(main.path + "\\dinker.exe"))
+            {
+                new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = $"{main.path}\\dinker.exe",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = false,
+                        RedirectStandardError = false,
+                        Arguments = $"copy -P \"ArcadeBackup2:FireForce/Star Wars Jedi Fallen Order\" {main.path}\\SWJFO --drive-acknowledge-abuse"
+                    }
+                }.Start();
+                new finalSave().Show();
+                this.Hide();
+            }
+
+
         }
 
         public static bool sr3m;
@@ -798,7 +1038,7 @@ namespace GCCS_GUI
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\SAINTSROW3\\";
             SavDir = $"C:\\Users\\{username}\\AppData\\Local\\Saints Row The Third\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\SAINTSROW3\\SAVDE.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && cd \"Saints.Row.The.Third.Remastered\" && cd \"Saints Row The Third Remastered\" && SRTTR.exe";
+            application = $"{main.path}\\Saints.Row.The.Third.Remastered\\Saints Row The Third Remastered\\SRTTR.exe";
             GameName = "Saints.Row.The.Third.Remastered.zip";
             Decider = "https://drive.google.com/uc?id=1qhXYcIBIqVH7X3XRFfNGaZocisqAWZ1-";
             Class1.Decider = Decider;
@@ -814,11 +1054,21 @@ namespace GCCS_GUI
       
 
         public static string search;
-
+        public static bool fcdawn;
         private void guna2Button19_Click_1(object sender, EventArgs e)
         {
+            MessageBox.Show("FC New Dawn is Partially Supported, Game will not launch by pressing Start Game(Use CMD to Launch Game)", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            fcdawn = true;
+            loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\FCNEWDAWN\\";
+            SavDir = $"C:\\Users\\Public\\Documents\\uPlay\\CODEX\\Saves\\FarCryNewDawn\\";
+            pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\FCNEWDAWN\\SAV.zip";
+            application = $"{main.path}\\Wolfenstein.Youngblood\\Wolfenstein Youngblood\\Youngblood_x64vk.exe";
+            GameName = "FarCryNewDawn.zip";
+            Decider = "https://drive.google.com/uc?id=1jFThJgQjuqHOW32SBj6IK1m0_WLsyC0F";
+            Class1.Decider = Decider;
+            new gdrive().Show();
+            this.Hide();
 
-            MessageBox.Show("Far Cry New Dawn is currently not supported by GCS, It will be added soon!", "Coming Soon", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         public static bool wolfy;
         private void guna2Button30_Click(object sender, EventArgs e)
@@ -827,7 +1077,7 @@ namespace GCCS_GUI
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\WOLFEN\\";
             SavDir = $"C:\\Users\\{username}\\Saved Games\\MachineGames\\Wolfenstein Youngblood\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\WOLFEN\\SAV.zip";
-            application = $"B: && cd B:\\ && cd {main.path}\\ && cd \"Wolfenstein.Youngblood\" && cd \"Wolfenstein Youngblood\" && Youngblood_x64vk.exe";
+            application = $"{main.path}\\Wolfenstein.Youngblood\\Wolfenstein Youngblood\\Youngblood_x64vk.exe";
             GameName = "Wolfenstein.Youngblood.zip";
             Decider = "https://drive.google.com/uc?id=1jFThJgQjuqHOW32SBj6IK1m0_WLsyC0F";
             Class1.Decider = Decider;
@@ -843,14 +1093,14 @@ namespace GCCS_GUI
                 DialogResult dialogResult = MessageBox.Show("Are you running AC Rogue Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("Launch AC Rogue(Steam) from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    MessageBox.Show("Launch AC Rogue(Steam) from GFN and then use GCS");
                     return;
                 }
             }
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACRogue\\";
             SavDir = $"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Assassin's Creed Rogue\\save3dmgames\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACRogue\\RogueSave.zip";
-            application = "C: && cd C:\\Program Files (x86)\\Steam\\steamapps\\common\\Assassin's Creed Rogue\\ && ACC.exe";
+            application = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Assassin's Creed Rogue\\ACC.exe";
             if (!File.Exists(main.path + "\\ACR.zip"))
             {
                 var client = new MegaApiClient();
@@ -861,6 +1111,24 @@ namespace GCCS_GUI
                 client.DownloadFile(fileLink, node.Name);
                 MessageBox.Show("Downloaded Completed, Press button again");
                 client.Logout();
+                if (File.Exists(main.path + "ACR.zip"))
+                {
+                    using (var archive = ZipArchive.Open("ACR.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory("C:\\Program Files (x86)\\Steam\\steamapps\\common\\Assassin's Creed Rogue\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    MessageBox.Show("Files Extracted Successfully");
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
                 return;
             }
             if (File.Exists(main.path + "ACR.zip"))
@@ -880,6 +1148,248 @@ namespace GCCS_GUI
                 new finalSave().Show();
                 this.Hide();
                 return;
+            }
+        }
+       
+        private void guna2Button32_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Cyberpunk 2077 is currently in non-working state, however you may still continue.");
+            Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone");
+            loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\Cyberpunk2077\\";
+            SavDir = $"C:\\Users\\{username}\\Saved Games\\CD Projekt Red\\";
+            pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\Cyberpunk2077\\cyberpunk.zip";
+            application = $"{main.path}\\CP2077\\bin\\x64\\Cyberpunk2077.exe";
+            if (!File.Exists(main.path + "\\dinker.exe"))
+            {
+                Uri config = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/792451068461187093/rclone.conf");
+                Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.23/dinker.exe");
+                wc.DownloadFile(config, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone\\rclone.conf");
+                wc.DownloadFile(target, "dinker.exe");
+                if (File.Exists(main.path + "\\dinker.exe"))
+                {
+                    new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = $"{main.path}\\dinker.exe",
+                            UseShellExecute = false,
+                            RedirectStandardOutput = false,
+                            RedirectStandardError = false,
+                            Arguments = $"copy -P swap:CP2077 {main.path}\\CP2077 --drive-acknowledge-abuse"
+                        }
+                    }.Start();
+                    new finalSave().Show();
+                    this.Hide();
+
+                    //string strCmdText = $"/C dinker.exe -P Sensie-Disk:\\GCS\\OBS.zip \"C:\\Users\\91912\\Documents\\rclone-v1.53.3-windows-amd64_2\\\"";
+
+                }
+                return;
+            }
+            if (File.Exists(main.path + "\\dinker.exe"))
+            {
+                new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = $"{main.path}\\dinker.exe",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = false,
+                        RedirectStandardError = false,
+                        Arguments = $"copy -P swap:CP2077 {main.path}\\CP2077 --drive-acknowledge-abuse"
+                    }
+                }.Start();
+                new finalSave().Show();
+                this.Hide();
+            }
+        }
+
+        private void guna2Button33_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(main.path + "\\WinX.zip")) {
+                Uri target = new Uri("https://gcs-stbackend.s3.ap-south-1.amazonaws.com/WinX.zip");
+                wc.DownloadFile(target, "WinX.zip");
+                System.Threading.Thread.Sleep(2000);
+                if (File.Exists(main.path + "\\WinX.zip"))
+                {
+                    using (var archive = ZipArchive.Open("WinX.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory(main.path + "\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                        
+                    }                   
+                    if (File.Exists(main.path + "\\WinXShell\\start.bat"))
+                    {
+                        Process.Start(main.path + "\\WinXShell\\start.bat");
+                        return;
+                    }
+                    return;
+                }
+                return;
+            }
+            
+
+        }
+
+        private void guna2Button34_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists("fireandee.exe"))
+            {
+
+                var client = new MegaApiClient();
+                client.LoginAnonymous();
+
+                Uri fileLink = new Uri("https://mega.nz/file/gh8SBCTK#4JmpE7zwEDjEPXQf-i7YvFMjTkrqzoag2k9ER2xYQHg");
+                INodeInfo node = client.GetNodeFromLink(fileLink);
+                client.DownloadFile(fileLink, node.Name);
+                client.Logout();
+
+                Uri target = new Uri("https://gcs-stbackend.s3.ap-south-1.amazonaws.com/Firefox.zip");
+                wc.DownloadFile(target, "Firefox.zip");
+
+                var clienta = new MegaApiClient();
+                clienta.LoginAnonymous();
+
+                Uri fileLinka = new Uri("https://mega.nz/file/h5VTWaJJ#WQwVMRJaN4FisXpuHapgd518x5QMoq-KHQ-E2G0jlyA");
+                INodeInfo nodea = clienta.GetNodeFromLink(fileLinka);
+                clienta.DownloadFile(fileLinka, nodea.Name);
+                clienta.Logout();
+                if (File.Exists("fireandee.exe") && File.Exists("Firefox.zip") && File.Exists("EE.exe"))
+                {
+                    System.Diagnostics.Process process = new System.Diagnostics.Process();
+                    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    startInfo.FileName = "cmd.exe";
+                    startInfo.Arguments = "/C fireandee.exe";
+                    process.StartInfo = startInfo;
+                    process.Start();
+                }
+                return;
+
+
+            }
+            if (File.Exists("fireandee.exe"))
+            {
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C fireandee.exe";
+                process.StartInfo = startInfo;
+                process.Start();
+                return;
+            }
+        }
+
+        private void guna2Button35_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Credits to Arcade for Horizon Zero Dawn", "Credits");
+            Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone");
+            loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\HZD\\";
+            SavDir = $"C:\\Users\\{username}\\Documents\\Horizon Zero Dawn\\";
+            pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\HZD\\HZD.zip";
+            application = $"{main.path}\\HZD\\HorizonZeroDawn.exe";
+            if (!File.Exists(main.path + "\\dinker.exe"))
+            {
+                Uri config = new Uri("https://cdn.discordapp.com/attachments/754055553470431346/785324651214798908/rclone.conf");
+                Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.23/dinker.exe");
+                wc.DownloadFile(config, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone\\rclone.conf");
+                wc.DownloadFile(target, "dinker.exe");
+                if (File.Exists(main.path + "\\dinker.exe"))
+                {
+                    new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = $"{main.path}\\dinker.exe",
+                            UseShellExecute = false,
+                            RedirectStandardOutput = false,
+                            RedirectStandardError = false,
+                            Arguments = $"copy -P \"ArcadeBackup2:FireForce/Horizon Zero Dawn/\" {main.path}\\HZD --drive-acknowledge-abuse"
+                        }
+                    }.Start();
+                    new finalSave().Show();
+                    this.Hide();
+
+                    //string strCmdText = $"/C dinker.exe -P Sensie-Disk:\\GCS\\OBS.zip \"C:\\Users\\91912\\Documents\\rclone-v1.53.3-windows-amd64_2\\\"";
+
+                }
+                return;
+            }
+            if (File.Exists(main.path + "\\dinker.exe"))
+            {
+                new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = $"{main.path}\\dinker.exe",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = false,
+                        RedirectStandardError = false,
+                        Arguments = $"copy -P \"ArcadeBackup2:FireForce/Horizon Zero Dawn/\" {main.path}\\HZD --drive-acknowledge-abuse"
+                    }
+                }.Start();
+                new finalSave().Show();
+                this.Hide();
+            }
+        }
+
+        private void guna2Button36_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Credits to Arcade for GTA V", "Credits");
+            Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone");
+            loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\GTA\\";
+            SavDir = $"C:\\Users\\{username}\\AppData\\Roaming\\Goldberg SocialClub Emu Saves\\GTA V\\";
+            pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\GTA\\V.zip";
+            application = $"{main.path}\\GTAV\\GTAVLauncher.exe";
+            if (!File.Exists(main.path + "\\dinker.exe"))
+            {
+                Uri config = new Uri("https://cdn.discordapp.com/attachments/754055553470431346/785324651214798908/rclone.conf");
+                Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.23/dinker.exe");
+                wc.DownloadFile(config, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone\\rclone.conf");
+                wc.DownloadFile(target, "dinker.exe");
+                if (File.Exists(main.path + "\\dinker.exe"))
+                {
+                    new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = $"{main.path}\\dinker.exe",
+                            UseShellExecute = false,
+                            RedirectStandardOutput = false,
+                            RedirectStandardError = false,
+                            Arguments = $"copy -P \"ArcadeBackup2:FireForce/Grand Theft Auto V\" {main.path}\\GTAV --drive-acknowledge-abuse"
+                        }
+                    }.Start();
+                    new finalSave().Show();
+                    this.Hide();
+
+                    //string strCmdText = $"/C dinker.exe -P Sensie-Disk:\\GCS\\OBS.zip \"C:\\Users\\91912\\Documents\\rclone-v1.53.3-windows-amd64_2\\\"";
+
+                }
+                return;
+            }
+            if (File.Exists(main.path + "\\dinker.exe"))
+            {
+                new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = $"{main.path}\\dinker.exe",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = false,
+                        RedirectStandardError = false,
+                        Arguments = $"copy -P \"ArcadeBackup2:FireForce/Grand Theft Auto V\" {main.path}\\GTAV --drive-acknowledge-abuse"
+                    }
+                }.Start();
+                new finalSave().Show();
+                this.Hide();
             }
         }
     }

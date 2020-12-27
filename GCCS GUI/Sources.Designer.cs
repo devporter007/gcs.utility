@@ -257,9 +257,9 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(275, 314);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(277, 24);
+            this.label12.Size = new System.Drawing.Size(197, 24);
             this.label12.TabIndex = 45;
-            this.label12.Text = "Mirror Links, Wolf Youngblood";
+            this.label12.Text = "MEGA CONTRIBUTOR";
             // 
             // Sources
             // 

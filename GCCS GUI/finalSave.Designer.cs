@@ -211,11 +211,11 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(603, 438);
+            this.label7.Location = new System.Drawing.Point(586, 442);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(246, 27);
+            this.label7.Size = new System.Drawing.Size(288, 27);
             this.label7.TabIndex = 31;
-            this.label7.Text = "Game Launched, Wait...";
+            this.label7.Text = "Lauch Game using explorer";
             this.label7.Visible = false;
             // 
             // guna2Button29

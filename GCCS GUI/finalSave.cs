@@ -173,9 +173,7 @@ namespace GCCS_GUI
             }
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = $"/C {main.application}";
+            startInfo.FileName = $"{main.application}";
             process.StartInfo = startInfo;
             process.Start();
         }

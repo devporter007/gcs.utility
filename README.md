@@ -1,5 +1,8 @@
 # GCS UTILITY
 PLEASE IGNORE "GCS GUI" FOLDER<br>
+<br>
+Jopandi is gae
+<br>
 GCS GUI, Unlike GCS CLI, GCS GUI is programmed in CSharp due to the ease of creating a GUI in Visual Studio.
 <h2> Build Requirements </h2>
     <ul>

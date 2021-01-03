@@ -116,9 +116,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(291, 154);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 33);
+            this.label5.Size = new System.Drawing.Size(239, 33);
             this.label5.TabIndex = 28;
-            this.label5.Text = "0.3 EA";
+            this.label5.Text = "0.3 - 17th Revision";
             // 
             // label6
             // 

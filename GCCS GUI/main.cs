@@ -32,7 +32,9 @@ namespace GCCS_GUI
 
         private void main_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show("GCS is in super maintenance mode, some things WILL not work", "NOTE", MessageBoxButtons.OK, MessageBoxIcon.Information);
             guna2ShadowForm1.SetShadowForm(this);
+
             guna2Button24.Visible = false;
             guna2Button20.Visible = false;
             guna2Button22.Visible = false;
@@ -918,6 +920,7 @@ namespace GCCS_GUI
 
         private void guna2Button26_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("This game uses files from arcade", "Credits", MessageBoxButtons.OK);
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone");
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\Assassin's Creed III Remastered\\";
             SavDir = $"C:\\Users\\{username}\\AppData\\Roaming\\Goldberg SocialClub Emu Saves\\";
@@ -925,7 +928,7 @@ namespace GCCS_GUI
             application = $"{main.path}\\RDR2\\Launcher.exe";
             if (!File.Exists(main.path + "\\dinker.exe"))
             {
-                Uri config = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/789551821814628382/rclone.conf");
+                Uri config = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/795002711031939072/rclone.conf");
                 Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.23/dinker.exe");
                 wc.DownloadFile(config, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone\\rclone.conf");
                 wc.DownloadFile(target, "dinker.exe");
@@ -939,7 +942,7 @@ namespace GCCS_GUI
                             UseShellExecute = false,
                             RedirectStandardOutput = false,
                             RedirectStandardError = false,
-                            Arguments = $"copy -P Sensie-Disk:\\D\\ {main.path}\\RDR2 --drive-acknowledge-abuse"
+                            Arguments = $"copy -P \"Dropbox:Red Dead Redemption 2\" {main.path}\\RDR2"
                         }
                     }.Start();
                     new finalSave().Show();
@@ -986,7 +989,7 @@ namespace GCCS_GUI
 
             if (!File.Exists(main.path + "\\dinker.exe"))
             {
-                Uri config = new Uri("https://cdn.discordapp.com/attachments/754055553470431346/785324651214798908/rclone.conf");
+                Uri config = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/795002711031939072/rclone.conf");
                 Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.23/dinker.exe");
                 wc.DownloadFile(config, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone\\rclone.conf");
                 wc.DownloadFile(target, "dinker.exe");
@@ -1150,10 +1153,19 @@ namespace GCCS_GUI
                 return;
             }
         }
+
+        public static string RcloneArguement;
        
         private void guna2Button32_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cyberpunk 2077 is currently in non-working state, however you may still continue.");
+            if (cpdropbox == true)
+            {
+                RcloneArguement = $"copy -P \"privbox:Cyberpunk 2077\" {main.path}\\CP2077";
+            }
+            else
+            {
+                RcloneArguement = $"copy -P \"swap:CP6/Cyberpunk 2077\" {main.path}\\CP2077 --drive-acknowledge-abuse";
+            }
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone");
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\Cyberpunk2077\\";
             SavDir = $"C:\\Users\\{username}\\Saved Games\\CD Projekt Red\\";
@@ -1161,7 +1173,7 @@ namespace GCCS_GUI
             application = $"{main.path}\\CP2077\\bin\\x64\\Cyberpunk2077.exe";
             if (!File.Exists(main.path + "\\dinker.exe"))
             {
-                Uri config = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/792451068461187093/rclone.conf");
+                Uri config = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/795002711031939072/rclone.conf");
                 Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.23/dinker.exe");
                 wc.DownloadFile(config, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone\\rclone.conf");
                 wc.DownloadFile(target, "dinker.exe");
@@ -1175,7 +1187,7 @@ namespace GCCS_GUI
                             UseShellExecute = false,
                             RedirectStandardOutput = false,
                             RedirectStandardError = false,
-                            Arguments = $"copy -P swap:CP2077 {main.path}\\CP2077 --drive-acknowledge-abuse"
+                            Arguments = RcloneArguement
                         }
                     }.Start();
                     new finalSave().Show();
@@ -1196,7 +1208,7 @@ namespace GCCS_GUI
                         UseShellExecute = false,
                         RedirectStandardOutput = false,
                         RedirectStandardError = false,
-                        Arguments = $"copy -P swap:CP2077 {main.path}\\CP2077 --drive-acknowledge-abuse"
+                        Arguments = RcloneArguement
                     }
                 }.Start();
                 new finalSave().Show();
@@ -1297,7 +1309,7 @@ namespace GCCS_GUI
             application = $"{main.path}\\HZD\\HorizonZeroDawn.exe";
             if (!File.Exists(main.path + "\\dinker.exe"))
             {
-                Uri config = new Uri("https://cdn.discordapp.com/attachments/754055553470431346/785324651214798908/rclone.conf");
+                Uri config = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/795002711031939072/rclone.conf");
                 Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.23/dinker.exe");
                 wc.DownloadFile(config, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone\\rclone.conf");
                 wc.DownloadFile(target, "dinker.exe");
@@ -1350,7 +1362,7 @@ namespace GCCS_GUI
             application = $"{main.path}\\GTAV\\GTAVLauncher.exe";
             if (!File.Exists(main.path + "\\dinker.exe"))
             {
-                Uri config = new Uri("https://cdn.discordapp.com/attachments/754055553470431346/785324651214798908/rclone.conf");
+                Uri config = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/795002711031939072/rclone.conf");
                 Uri target = new Uri("https://github.com/devporter007/gcs.utility/releases/download/0.23/dinker.exe");
                 wc.DownloadFile(config, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.config\\rclone\\rclone.conf");
                 wc.DownloadFile(target, "dinker.exe");
@@ -1364,9 +1376,15 @@ namespace GCCS_GUI
                             UseShellExecute = false,
                             RedirectStandardOutput = false,
                             RedirectStandardError = false,
-                            Arguments = $"copy -P \"ArcadeBackup2:FireForce/Grand Theft Auto V\" {main.path}\\GTAV --drive-acknowledge-abuse"
+                            Arguments = $"copy -P \"Dropbox:Grand Theft Auto V\" {main.path}\\GTAV"
                         }
                     }.Start();
+                    if (!Directory.Exists($"C:\\Users\\{username}\\AppData\\Roaming\\Goldberg SocialClub Emu Saves"))
+                    {
+                        Uri nig = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/795224989301080104/GTA-V-SAVES-PROPER.zip");
+                        wc.DownloadFile(nig, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\saves.zip");
+                        ZipFile.ExtractToDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\saves.zip", Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\");
+                    }
                     new finalSave().Show();
                     this.Hide();
 
@@ -1388,9 +1406,29 @@ namespace GCCS_GUI
                         Arguments = $"copy -P \"ArcadeBackup2:FireForce/Grand Theft Auto V\" {main.path}\\GTAV --drive-acknowledge-abuse"
                     }
                 }.Start();
+                if (!Directory.Exists($"C:\\Users\\{username}\\AppData\\Roaming\\Goldberg SocialClub Emu Saves"))
+                {
+                    Uri nig = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/795201017393315870/GTA-V-SAVES-PROPER.zip");
+                    wc.DownloadFile(nig, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\saves.zip");
+                    ZipFile.ExtractToDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\saves.zip", Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\");
+                }
                 new finalSave().Show();
                 this.Hide();
             }
+        }
+        public static bool cpdropbox;
+        private void guna2Button37_Click(object sender, EventArgs e)
+        {
+                DialogResult dialogResult = MessageBox.Show("Do you want to change download server for cyberpunk 2077?(Yes for Dropbox and No for Gdrive)", "Swap Disk", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Download Disk :- Google Drive");
+                    return;
+                }
+
+           
+            MessageBox.Show("Download Disk :- Dropbox","Successfully Set");
+            cpdropbox = true;
         }
     }
 }

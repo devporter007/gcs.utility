@@ -97,6 +97,16 @@ namespace GCCS_GUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            if (messagek == true)
+            {
+                messagek = false;
+                DialogResult dialogResult = MessageBox.Show("Are you running Far Cry 5 Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Launch FC-5 from GFN and then use GCS");
+                    return;
+                }
+            }
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\FarCry5\\";
             SavDir = "C:\\Users\\Public\\Documents\\uPlay\\CODEX\\Saves\\FarCry5\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\FarCry5\\cmg_load.zip";
@@ -169,6 +179,16 @@ namespace GCCS_GUI
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            if (messagek == true)
+            {
+                messagek = false;
+                DialogResult dialogResult = MessageBox.Show("Are you running Assassin's Creed Odyssey Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Launch Assassin's Creed Odyssey from GFN and then use GCS");
+                    return;
+                }
+            }
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\";
             SavDir = $"C:\\Users\\{username}\\AppData\\Roaming\\uplay_emu\\EMPRESS\\5059\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\cmg_load.zip";
@@ -232,7 +252,7 @@ namespace GCCS_GUI
                 DialogResult dialogResult = MessageBox.Show("Are you running Euro Truck 2 Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("Launch Euro Truck 2 from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    MessageBox.Show("Launch Euro Truck 2 from GFN and then use GCS");
                     return;
                 }
             }
@@ -292,7 +312,7 @@ namespace GCCS_GUI
 
         private void guna2Button15_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("https://pastebin.com/LBSQFSsa , CHECK THIS GUIDE BEFORE EVEN THINKING ABOUT PLAYING THIS GAME","CAUTION!");
+            MessageBox.Show("https://pastebin.com/LBSQFSsa , CHECK THIS GUIDE BEFORE EVEN THINKING ABOUT PLAYING THIS GAME","Important",MessageBoxButtons.OK,MessageBoxIcon.Information);
             if (!File.Exists(main.path + "\\Engine.zip"))
             {
                 var client = new MegaApiClient();
@@ -356,7 +376,7 @@ namespace GCCS_GUI
                 }
             }
 
-            guna2ProgressBar1.Visible = true;
+            
             SavDir = $"C:\\Users\\Public\\Documents\\Steam\\CODEX\\863550\\";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\ACOdyssey\\cmg_loadHITMAN2.zip";
@@ -366,8 +386,7 @@ namespace GCCS_GUI
            
                 wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
                 Uri target = new Uri("https://cdn.discordapp.com/attachments/728493236154269707/762372067953082418/hm2.zip");
-                wc.DownloadFileAsync(target, "hm2.zip");
-                MessageBox.Show("Download Completed, Click OK to proceed", "Note");
+                wc.DownloadFile(target, "hm2.zip");
                 if (File.Exists(main.path + "\\hm2.zip"))
                 {
                     using (var archive = ZipArchive.Open("hm2.zip"))
@@ -452,11 +471,11 @@ namespace GCCS_GUI
                 DialogResult dialogResult = MessageBox.Show("Are you running Plague Tale Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("Launch Plague Tale from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    MessageBox.Show("Launch Plague Tale from GFN and then use GCS");
                     return;
                 }
             }
-            guna2ProgressBar1.Visible = true;
+       
             SavDir = $"C:\\Users\\Public\\Documents\\Steam\\CODEX\\752590\\";
             pather = $"C:\\Program Files (x86)\\Steam\\music\\_database\\cmg_SteamClientMusic.db";
             loadC = $"C:\\Program Files (x86)\\Steam\\music\\_database\\";
@@ -465,10 +484,9 @@ namespace GCCS_GUI
             if (!File.Exists(main.path + "\\plagcra.zip"))
             {
               
-                wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
+              
                 Uri target = new Uri("https://cdn.discordapp.com/attachments/613186365911203845/762370705068523551/plagcra.zip");
-                wc.DownloadFileAsync(target, "plagcra.zip");
-                MessageBox.Show("Download Completed, Click OK to proceed", "Note");
+                wc.DownloadFile(target, "plagcra.zip");
                 if (File.Exists(main.path + "\\plagcra.zip"))
                 {
                     using (var archive = ZipArchive.Open("plagcra.zip"))
@@ -519,11 +537,11 @@ namespace GCCS_GUI
                 DialogResult dialogResult = MessageBox.Show("Are you running Far Cry 4 Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("Launch FC-4 from GFN and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                    MessageBox.Show("Launch FC-4 from GFN and then use GCS");
                     return;
                 }
             }
-            guna2ProgressBar1.Visible = true;
+         
             SavDir = $"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Far Cry 4\\bin\\save3dmgames\\";
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\FarCry5\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\FarCry5\\cmg_fc4.zip";
@@ -535,8 +553,7 @@ namespace GCCS_GUI
                 
                 wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
                 Uri target = new Uri("https://cdn.discordapp.com/attachments/728493236154269707/753173730640789594/bin.zip");
-                wc.DownloadFileAsync(target, "bin.zip");
-                MessageBox.Show("Download Completed, Click OK to proceed", "Note");
+                wc.DownloadFile(target, "bin.zip");
                 if (File.Exists(main.path + "\\bin.zip"))
                 {
                     using (var archive = ZipArchive.Open("bin.zip"))
@@ -755,16 +772,59 @@ namespace GCCS_GUI
             DialogResult dialogResult = MessageBox.Show("Are you on Death Stranding Session?", "N/Y", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(dialogResult == DialogResult.No)
             {
-                MessageBox.Show("Use Death Stranding Session and then download and run USG from http://t1p.de/SteamUnsupported2020 ,then use GCS");
+                MessageBox.Show("Use Death Stranding Session and then use GCS");
                 return;
             }
             if(dialogResult == DialogResult.Yes) {
                 DeathDecider = true;
                 application = "C:/Program Files (x86)/Steam/steamapps/common/Death Stranding/ds.exe";
-                GameName = "DS-Patch.rar -O\"C:/Program Files (x86)/Steam/steamapps/common/Death Stranding/\"";
-                Decider = "https://drive.google.com/uc?id=1boILKcvDO1-DU0RLNMaCS-jygQXxR1nf";
-                Class1.Decider = Decider;
-                new gdrive().Show();
+
+                if (!File.Exists(main.path + "\\Crack.zip"))
+                {
+                    Uri target = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/795233781358395422/Crack.zip");
+                    wc.DownloadFile(target, "Crack.zip");
+                    if (File.Exists(main.path + "\\Crack.zip"))
+                    {
+                        using (var archive = ZipArchive.Open("Crack.zip"))
+                        {
+                            foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                            {
+                                entry.WriteToDirectory("C:\\Program Files (x86)\\Steam\\steamapps\\common\\Death Stranding\\", new ExtractionOptions()
+                                {
+                                    ExtractFullPath = true,
+                                    Overwrite = true
+                                });
+                            }
+                        }
+                        MessageBox.Show("Files Extracted Successfully");
+                        new finalSave().Show();
+                        this.Hide();
+                        return;
+                    }
+                    return;
+                }
+
+
+
+                if (File.Exists(main.path + "\\Crack.zip"))
+                {
+                    using (var archive = ZipArchive.Open("Crack.zip"))
+                    {
+                        foreach (var entry in archive.Entries.Where(entry => !entry.IsDirectory))
+                        {
+                            entry.WriteToDirectory("C:\\Program Files (x86)\\Steam\\steamapps\\common\\Death Stranding\\", new ExtractionOptions()
+                            {
+                                ExtractFullPath = true,
+                                Overwrite = true
+                            });
+                        }
+                    }
+                    MessageBox.Show("Files Extracted Successfully");
+                    new finalSave().Show();
+                    this.Hide();
+                    return;
+                }
+
                 this.Hide();
             }
             
@@ -1359,7 +1419,7 @@ namespace GCCS_GUI
             loadC = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\GTA\\";
             SavDir = $"C:\\Users\\{username}\\AppData\\Roaming\\Goldberg SocialClub Emu Saves\\GTA V\\";
             pather = $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\GTA\\V.zip";
-            application = $"{main.path}\\GTAV\\GTAVLauncher.exe";
+            application = $"{main.path}\\EE.exe";
             if (!File.Exists(main.path + "\\dinker.exe"))
             {
                 Uri config = new Uri("https://cdn.discordapp.com/attachments/771442981102288896/795002711031939072/rclone.conf");

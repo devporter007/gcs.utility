@@ -177,6 +177,10 @@ namespace GCCS_GUI
             {
                 this.Text = "Starting...";
             }
+            if (main.loadC == $"C:\\Users\\{username}\\AppData\\Local\\Ubisoft Game Launcher\\spool\\GTA\\")
+            {
+                MessageBox.Show("GTA V should be launched manually by Explorer++ to avoid crash, Press OK to open explorer", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             if (main.FC5Decider == true)
             {
                 Process processs = new Process();

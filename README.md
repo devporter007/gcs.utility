@@ -1,10 +1,8 @@
 # GCS UTILITY
 PLEASE IGNORE "GCS GUI" FOLDER<br>
 <br>
-Jopandi is gae
 <br>
-<br>
-GCS GUI, Unlike GCS CLI, GCS GUI is programmed in CSharp due to the ease of creating a GUI in Visual Studio.
+Official Repo of GCS Utility, PROGRAM LICENSED IN AGPL V3 LICENSE, BY USING THIS PROGRAM YOU AUTOMATICALLY ACCEPT THE TERMS AND RIGHTS AS SPECIFIED IN THE LICENSE. 
 <h2> Build Requirements </h2>
     <ul>
       <li> GUNA UI V2, Get it from somewhere.

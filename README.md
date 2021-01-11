@@ -1,5 +1,5 @@
 # GCS UTILITY
-PLEASE IGNORE "GCS GUI" FOLDER<br>
+PLEASE IGNORE "GCS GUI" FOLDER
 <br>
 This repo gets outdated sometimes, so you can request me repo updates at Port007#0001
 <br>

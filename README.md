@@ -1,8 +1,6 @@
 # GCS UTILITY
 PLEASE IGNORE "GCS GUI" FOLDER
 <br>
-This repo gets outdated sometimes, so you can request me repo updates at Port007#0001
-<br>
 Official Repo of GCS Utility, PROGRAM LICENSED IN AGPL V3 LICENSE, BY USING THIS PROGRAM YOU AUTOMATICALLY ACCEPT THE TERMS AND RIGHTS AS SPECIFIED IN THE LICENSE. 
 <h2> Build Requirements </h2>
     <ul>
